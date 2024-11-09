@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "alliander-course-design-patterns"
+version = "0.1.0"
+description = "Repository that includes the Design Patterns for the Alliander course"
+authors = ["Jasper Sival <jasper.sival@alliander.com>"]
+readme = "README.md"
+
+packages = [
+    { include = 'design_patterns', from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.3"
+mypy = "^1.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
