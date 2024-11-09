@@ -5,6 +5,7 @@ from design_patterns.strategy.ducks import MallardDuck, RubberDuck, ModelDuck
 
 app = Typer()
 
+
 @app.command("mallard")
 def run_mallard():
     mallard = MallardDuck()
@@ -13,6 +14,7 @@ def run_mallard():
     mallard.perform_fly()
     mallard.swim()
 
+
 @app.command("rubber")
 def run_rubber():
     rubber = RubberDuck()
@@ -20,6 +22,7 @@ def run_rubber():
     rubber.perform_quack()
     rubber.perform_fly()
     rubber.swim()
+
 
 @app.command("model")
 def run_model():
