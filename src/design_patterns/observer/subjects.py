@@ -27,6 +27,13 @@ class WeatherData(Subject):
     def remove_observer(self, observer: Observer):
         self.observers.remove(observer)
 
+    def measurements_changed(self):
+        """
+        This method is here to keep the original interface in first_implementation.py intact.
+        Other than that it is not needed to keep this method and the notify_observers method separate.
+        """
+        self.notify_observers()
+
     def notify_observers(self):
         for observer in self.observers:
             observer.update(self.temperature, self.humidity, self.pressure)
@@ -35,4 +42,4 @@ class WeatherData(Subject):
         self.temperature = temperature
         self.humidity = humidity
         self.pressure = pressure
-        self.notify_observers()
+        self.measurements_changed()
