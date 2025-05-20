@@ -46,3 +46,23 @@ class ChicagoStyleCheesePizza(Pizza):
     @staticmethod
     def cut():
         print("Cutting the pizza into square slices")
+
+
+class NYStyleVeggiePizza(Pizza):
+    def __init__(self):
+        self.name = "NY Style Veggie Pizza"
+        self.dough = "Thin Crust Dough"
+        self.sauce = "Marinara Sauce"
+        self.toppings.extend(
+            ["Grated Reggiano Cheese", "Black Olives", "Spinach", "Eggplant"]
+        )
+
+
+class ChicagoStyleVeggiePizza(Pizza):
+    def __init__(self):
+        self.name = "Chicago Style Veggie Pizza"
+        self.dough = "Extra Thick Crust Dough"
+        self.sauce = "Plum Tomato Sauce"
+        self.toppings.extend(
+            ["Shredded Mozzarella Cheese", "Black Olives", "Spinach", "Eggplant"]
+        )
