@@ -29,9 +29,11 @@ class SimplePizzaFactory:
 
 
 class PizzaStore:
-    @staticmethod
-    def order_pizza(pizza_type: str) -> Pizza:
-        pizza = SimplePizzaFactory.create_pizza(pizza_type)
+    def __init__(self, factory: SimplePizzaFactory):
+        self.factory = factory
+
+    def order_pizza(self, pizza_type: str) -> Pizza:
+        pizza = self.factory.create_pizza(pizza_type)
         pizza.prepare()
         pizza.bake()
         pizza.cut()
