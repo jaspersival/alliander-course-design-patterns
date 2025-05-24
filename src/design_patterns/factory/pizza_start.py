@@ -22,6 +22,15 @@ class GreekPizza(Pizza): ...
 
 
 def order_pizza_parametrized(pizza_type: str) -> Pizza:
+    pizza = create_pizza(pizza_type)
+    pizza.prepare()
+    pizza.bake()
+    pizza.cut()
+    pizza.box()
+    return pizza
+
+
+def create_pizza(pizza_type):
     pizza: Pizza
     match pizza_type:
         case "cheese":
@@ -36,8 +45,4 @@ def order_pizza_parametrized(pizza_type: str) -> Pizza:
             pizza = ClamPizza()
         case _:
             raise ValueError(f"Unknown pizza type: {pizza_type}")
-    pizza.prepare()
-    pizza.bake()
-    pizza.cut()
-    pizza.box()
     return pizza
