@@ -66,3 +66,19 @@ class ChicagoStyleVeggiePizza(Pizza):
         self.toppings.extend(
             ["Shredded Mozzarella Cheese", "Black Olives", "Spinach", "Eggplant"]
         )
+
+
+class PepperoniPizza(Pizza):
+    def __init__(self):
+        self.name = "Pepperoni Pizza"
+        self.dough = "Regular Crust Dough"
+        self.sauce = "Tomato Sauce"
+        self.toppings.append("Sliced Pepperoni")
+
+
+class ClamPizza(Pizza):
+    def __init__(self):
+        self.name = "Clam Pizza"
+        self.dough = "Regular Crust Dough"
+        self.sauce = "White Sauce"
+        self.toppings.append("Fresh Clams")

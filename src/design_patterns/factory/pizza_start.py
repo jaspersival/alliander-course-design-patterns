@@ -1,4 +1,4 @@
-from design_patterns.factory.pizza import Pizza
+from design_patterns.factory.pizza import Pizza, PepperoniPizza, ClamPizza
 
 
 def order_pizza() -> Pizza:
@@ -30,6 +30,10 @@ def order_pizza_parametrized(pizza_type: str) -> Pizza:
             pizza = VeggiePizza()
         case "greek":
             pizza = GreekPizza()
+        case "pepperoni":
+            pizza = PepperoniPizza()
+        case "clam":
+            pizza = ClamPizza()
         case _:
             raise ValueError(f"Unknown pizza type: {pizza_type}")
     pizza.prepare()
