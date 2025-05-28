@@ -25,19 +25,21 @@ class PizzaStore(ABC):
 
 class NYStylePizzaStore(PizzaStore):
     def create_pizza(self, pizza_type: str) -> Pizza:
-        if pizza_type == "cheese":
-            return NYStyleCheesePizza()
-        elif pizza_type == "veggie":
-            return NYStyleVeggiePizza()
-        else:
-            raise ValueError(f"Unknown pizza type: {pizza_type}")
+        match pizza_type:
+            case "cheese":
+                return NYStyleCheesePizza()
+            case "veggie":
+                return NYStyleVeggiePizza()
+            case _:
+                raise ValueError(f"Unknown pizza type: {pizza_type}")
 
 
 class ChicagoStylePizzaStore(PizzaStore):
     def create_pizza(self, pizza_type: str) -> Pizza:
-        if pizza_type == "cheese":
-            return ChicagoStyleCheesePizza()
-        elif pizza_type == "veggie":
-            return ChicagoStyleVeggiePizza()
-        else:
-            raise ValueError(f"Unknown pizza type: {pizza_type}")
+        match pizza_type:
+            case "cheese":
+                return ChicagoStyleCheesePizza()
+            case "veggie":
+                return ChicagoStyleVeggiePizza()
+            case _:
+                raise ValueError(f"Unknown pizza type: {pizza_type}")

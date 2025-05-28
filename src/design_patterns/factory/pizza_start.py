@@ -30,7 +30,7 @@ def order_pizza_parametrized(pizza_type: str) -> Pizza:
     return pizza
 
 
-def create_pizza(pizza_type):
+def create_pizza(pizza_type: str) -> Pizza:
     pizza: Pizza
     match pizza_type:
         case "cheese":
