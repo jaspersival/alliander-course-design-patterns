@@ -24,6 +24,13 @@ class PizzaStore(ABC):
 
 
 class NYStylePizzaStore(PizzaStore):
+    def order_pizza(self, pizza_type: str) -> Pizza:
+        pizza = self.create_pizza(pizza_type)
+        pizza.prepare()
+        pizza.bake()
+        pizza.box()
+        return pizza
+
     def create_pizza(self, pizza_type: str) -> Pizza:
         match pizza_type:
             case "cheese":
